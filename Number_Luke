@@ -1,0 +1,25 @@
+'''Написать программу, вычисляющую n-е число Люка и проверяющую
+число n на простоту с помощью теста Люка.
+Входные данные: число n.
+Выходные данные: n-е число Люка, сообщение о том, является ли
+число n гарантированно простым или может быть как простым, так и
+составным.'''
+
+print('Введите ваше число на проверку!')
+number_for_check = int(input())
+
+def recursion_1(number_for_check):
+    if number_for_check == 0:
+        return 2 
+    elif number_for_check == 1:
+        return 1 
+    else:
+        return recursion_1(number_for_check - 1) + recursion_1(number_for_check - 2) 
+
+def check_if_prime(number_for_check):
+    if (recursion_1(number_for_check) - 1) % (number_for_check) == 0:
+        return (f'{number_for_check} - Ура! Простое!')
+    else : 
+        return (f'{number_for_check} - Ура!  Составное или простое!')
+print(f'{number_for_check} число Люка - это {recursion_1(number_for_check)}')
+print(check_if_prime(number_for_check))
