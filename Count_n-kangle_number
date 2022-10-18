@@ -1,0 +1,9 @@
+def count_n_kange_number(k, n):
+    k = int(input())
+    n = int(input())
+    if k >= 3 and n > 0:
+        num_n_kangel_polygon = (0.5)*k*(n**2 - n) - n**2 + 2*n 
+        return num_n_kangel_polygon
+    else:
+        return 'Кол-во углов вашего числа должно быть больше 3, а номер числа больше 0.'
+count_n_kange_number(k, n)
