@@ -1,0 +1,130 @@
+'''Создать список своих любимых фильмов. Вывести список тремя способами: 
+   1) в строчку; 2) в столбик; 3) в строчку через запятую.'''
+
+fav_films = ['Матрица', 'Форсаж', 'Пример']
+for i in range(len(fav_films)):
+    print(fav_films[i], end =' ' )
+print('\n')
+for i in range(len(fav_films)):
+    print(fav_films[i], end ='\n' )
+print('\n')
+for i in range(len(fav_films)-1):
+    print(fav_films[i], end =', ' )
+print(fav_films[-1])
+
+
+#2 
+'''Ввести c клавиатуры список фамилий писателей.
+   Отсортировать список в алфавитном порядке и вывести.'''
+writers = []
+print('Введите имя писателя.','Если Вы хотите остановить программу, введите "Стоп"', sep='\n')
+while True:
+    new_writer = str(input())
+    if new_writer.lower() == 'стоп':
+        print(sorted(writers))
+        exit()
+    writers.append(new_writer)
+
+
+#3
+'''Создать список из пяти элементов. Заполнить случайными числами. 
+   Вывести этот список. Найти и вывести сумму элементов.'''
+from random import randint 
+r_list = [0]*5
+summ_elem = 0
+for item in range(len(r_list)):
+    r_list[item] = randint(0,100)
+    summ_elem += r_list[item]
+print(r_list, f'Сумма элементов этого списка ---> { summ_elem}', sep='\n')
+
+
+#4 
+'''Создать список из десяти элементов. Заполнить случайными числами. 
+   Вывести этот список. Вывести наибольший элемент списка.'''
+from random import randint
+r_list = [0]*10 
+for i in range(len(r_list)):
+    r_list[i] = randint(0, 100) 
+max_n = max(r_list)
+print(r_list, f'Максимальное число из списка ---> {max_n}', sep='\n')
+
+
+#5
+'''Создать список из десяти элементов. Заполнить случайными числами. 
+   Заменить все нечетные числа нулями. Вывести исходный и получившийся списки.'''
+from random import randint
+r_list = [0]*10 
+for i in range(len(r_list)):
+    r_list[i] = randint(0, 100)
+print(f'Исходный лист ---> {r_list}')
+for item in range(len(r_list)):
+    if r_list[item] % 2 != 0:
+        r_list[item] = 0
+print(f'Получившийся лист ---> {r_list}')
+
+
+#6 
+#6
+'''Заполнить массив из 10 элементов случайными числами в интервале [-100,100] и переставить
+   элементы так, чтобы все положительные элементы стояли в начала массива, 
+   все отрицательные и нули в конце.'''
+from random import randint
+r_list = [randint(-100, 101) for i in range(10)]
+print(r_list)
+
+count = 0
+nums = []
+while count < len(r_list):
+    if r_list[count] <= 0:
+        nums.append(r_list[count])
+        del r_list[count]
+    else:
+        count += 1
+r_list.extend(nums)
+print(r_list)
+
+
+#7
+'''Заполнить массив a случайными числами, отобрать в массив b все числа, меньшие пяти. 
+   Вывести 2 массива.'''
+from random import randint
+a = [randint(-100, 100) for i in range(10)]
+print(a)
+b = [i for i in a if i < 5]
+print(b)
+
+
+#8
+'''Создать список своих любимых песен. 
+   Отсортировать список в алфавитном порядке и вывести.'''
+a = ['In my head', 'Alphabet', 'You are my friend', 'Oaoaoa']
+print(sorted(a))
+
+
+#9
+'''Создать список из десяти элементов. Заполнить случайными числами. 
+   Вывести этот список. Вывести наименьший элемент списка.'''
+from random import randint
+r_list = [0]*10 
+for i in range(len(r_list)):
+    r_list[i] = randint(0, 100) 
+minim = min(r_list)
+print(r_list, f'Минимальное число из списка ---> {minim}', sep='\n')
+
+
+#10
+'''Заполнить массив из 5 элементов случайными числами в интервале [-100,100]. 
+   Найти сумму всех отрицательных элементов массива. 
+   Если отрицательных элементов в массиве нет, 
+   вывести сообщение «отрицательных элементов нет».'''
+from random import randint
+a = [randint(-100, 101) for i in range(5)]
+print(a)
+summa = 0
+for i in range(len(a)):
+    if a[i] < 0:
+        summa += a[i]
+if summa == 0:
+    print('отрицательных элементов нет')
+else:
+    print(summa)
