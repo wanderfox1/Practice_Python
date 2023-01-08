@@ -1,0 +1,55 @@
+#My 1st project
+#Madlibs
+adj = input('Adjective: ')
+verb1 = input('Verb: ')
+verb2 = input('Verb: ')
+famous_person = input('Famous person: ')
+
+madlib = f'Computer programming is so {adj}! It makes me so excited \
+all the time because I love to {verb1}. Stay hydrated and {verb2} \
+like you are {famous_person}!'
+
+print(madlib)
+
+#My 2nd projects
+#Guess_the_number(Computer Version)
+import random
+
+def guess(x):
+    count = 0
+    random_number = random.randint(1, x)
+    guess = 0
+    while guess != random_number : 
+        guess = int(input(f'Guess a number between 1 and {x} : '))
+        if guess < random_number :
+            print('Sorry, guess again. Too low')
+        elif guess > random_number : 
+                  print('Sorry, guess again. Too big')
+        
+    print(f'Yay, congratulations. You won, the number \
+{random_number} is correctly attempt')
+guess(100)
+
+#My 3rd project
+# engine of making horoscopes
+import random
+sign = str(input('Введите Ваш Знак зодиака : '))
+predics = ['Успех', 'Удача', 'Любовь', 'Деньги', 'Сегодня обычный день. Займитесь собой!']
+
+def horoscopes(sign):
+    sign = sign.title()
+    random_wish = random.choice(predics)
+    print (f'{sign}! Сегодня Вас ждёт {random_wish}!')
+horoscopes(sign)
+
+#My 4th project
+
+
+
+
+
+
+
+
+
+
