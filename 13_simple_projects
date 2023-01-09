@@ -1,5 +1,6 @@
 #My 1st project
 #Madlibs
+#Goal :
 adj = input('Adjective: ')
 verb1 = input('Verb: ')
 verb2 = input('Verb: ')
@@ -13,6 +14,7 @@ print(madlib)
 
 #My 2nd projects
 #Guess_the_number(Computer Version)
+#Goal :
 import random
 
 def guess(x):
@@ -31,6 +33,7 @@ def guess(x):
 guess(100)
 
 #My 3rd project
+#Goal :
 # engine of making horoscopes
 import random
 sign = str(input('Введите Ваш Знак зодиака : '))
@@ -43,7 +46,28 @@ def horoscopes(sign):
 horoscopes(sign)
 
 #My 4th project
+#Guess the number(user).
+#Goal :
+import random 
+def computer_guess(x):
+    low = 1
+    high = x 
+    feedback = ''
+    attempts = 0
+    while feedback != 'c':
+        attempts += 1
+        if low != high :
+            guess = random.randint(low, high)
+        else : 
+            guess = low # could also be high
+        feedback = input(f'Is {guess} too high (H), too low(L), or correct (C)?? ').lower()
+        if feedback == 'h': 
+            high = guess - 1
+        elif feedback == 'l':
+            low = guess + 1
+    print(f'Yay, Mr.Computer guessed ur number, it is {guess}, number of attempts is {attempts}')
 
+computer_guess(1000)
 
 
 
