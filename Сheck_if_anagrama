@@ -1,0 +1,20 @@
+#Проверка на анаграмы
+str1 = input()
+str2 = input()
+def split(s):
+    return [char for char in s]
+
+if len(str1) != len(str2) :
+    print(False)
+    exit()
+else : 
+    str_1 = split(str1)
+    str_2 = split(str2)
+    for char in range(len(str1)) : 
+        if str_1[char] not in str_2 :
+            print(False)
+            exit()
+        else :
+            str_2.remove(str_1[char])
+            
+print(True)
